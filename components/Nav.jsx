@@ -7,6 +7,18 @@ import {signIn, signOut, useSession, getProviders} from 'next-auth/react';
 
 const Nav = () => {
     const isUserLoggedIn = true;
+    const [providers, setProviders] = useState(null);
+
+    useEffect(() => {
+        const setProviders = async () => {
+            const reponse = await getProviders();
+
+            setProviders(response);
+        }
+
+        setProviders();
+
+    }, [])
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
@@ -14,14 +26,23 @@ const Nav = () => {
             <Image src="/assets/images/logo.svg" alt="Portfolia Logo" width={30} height={30} className="object-contain"/>
             <p className="logo_text">Portfolia</p>
         </Link>
-        {/* Mobile Navigation */}
+        {/* Desktop Navigation */}
         <div className="sm:flex hidden">
             {isUserLoggedIn ? (
                 <div className="flex gap-3 md:gap-5">
                     <Link href="/create-promot" className="black_btn">Create Post</Link>
+                    <button type="button" onClick={signOut} className="outline_btn">
+                        Sign Out
+                    </button>
+
+                    <Link href="/profile">
+                        <Image src="/assets/images/logo.svg" width={25} height={25} className="rounded-full" alt="profile"/>
+                    </Link>
                 </div>
             ): (
-                <></>
+                <>
+                
+                </>
             )}
         </div>
     </nav>    
