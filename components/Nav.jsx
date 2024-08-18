@@ -6,7 +6,11 @@ import { useState, useEffect } from 'react';
 import {signIn, signOut, useSession, getProviders} from 'next-auth/react';
 
 const Nav = () => {
-    const isUserLoggedIn = true;
+    //isUserLoggedIn is to bre replaced by actual session data
+    //const isUserLoggedIn = true;
+
+    const {data: session} = useSession();
+
     const [providers, setProviders] = useState(null);
     const [toggleDropDown, setToggleDropDown] = useState(false);
 
@@ -29,7 +33,7 @@ const Nav = () => {
         </Link>
         {/* Desktop Navigation */}
         <div className="sm:flex hidden">
-            {isUserLoggedIn ? (
+            {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
                     <Link href="/create-promot" className="black_btn">Create Post</Link>
                     <button type="button" onClick={signOut} className="outline_btn">
@@ -56,7 +60,7 @@ const Nav = () => {
 
         {/* Mobile Navigation */}
         <div className="sm:hidden flex relative">
-            {isUserLoggedIn ? (
+            {session?.user ? (
                 <div className="flex">
                     <Image src="/assets/images/logo.svg" width={25} height={25} className="rounded-full" alt="profile" onClick={() => setToggleDropDown((prev) => !prev)}/>
                     {toggleDropDown && (
