@@ -15,14 +15,12 @@ const Nav = () => {
     const [toggleDropDown, setToggleDropDown] = useState(false);
 
     useEffect(() => {
-        const setProviders = async () => {
-            const reponse = await getProviders();
+        const setUpProviders = async () => {
+            const response = await getProviders();
 
             setProviders(response);
         }
-
-        setProviders();
-
+        setUpProviders();
     }, [])
 
   return (
@@ -31,11 +29,12 @@ const Nav = () => {
             <Image src="/assets/images/logo.svg" alt="Portfolia Logo" width={30} height={30} className="object-contain"/>
             <p className="logo_text">PORTFOLIA</p>
         </Link>
+
         {/* Desktop Navigation */}
         <div className="sm:flex hidden">
             {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
-                    <Link href="/create-promot" className="black_btn">Create Post</Link>
+                    <Link href="/create-prompt" className="black_btn">Create Post</Link>
                     <button type="button" onClick={signOut} className="outline_btn">
                         Sign Out
                     </button>
