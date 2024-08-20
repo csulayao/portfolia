@@ -16,6 +16,8 @@ export const connectToDB = async () => {
       useNewUrlParse: true,
       useUnifiedTopology: true,
     });
+
+    isConnected = true;
   } catch (error) {
     console.log(error);
   }
