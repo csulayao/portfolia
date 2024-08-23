@@ -1,6 +1,12 @@
 import React from 'react'
 
-const Form = () => {
+const Form = ({
+  type,
+  post,
+  setPost,
+  submitting,
+  handleSubmmit,
+}) => {
   return (
     <div>Form</div>
   )
