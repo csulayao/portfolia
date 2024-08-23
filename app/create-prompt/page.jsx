@@ -7,7 +7,7 @@ import { useSession } from 'react/navigation';
 import Form from '@components/Form';
 
 const CreatePrompt = () => {
-  const [submitting, SetSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
     prompt:'',
     tag: '',
@@ -23,7 +23,7 @@ const CreatePrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmmit={createPrompt}
+      handleSubmit={createPrompt}
     />
   )
 }
