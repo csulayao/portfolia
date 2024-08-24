@@ -13,7 +13,14 @@ const Form = ({
       <p className="desc text-left max-w-md">
         {type} and share amazing prompts with the world, and let your imagination run wild with any AI-powered portfolio.
       </p>
-      <form onSubmit={handleSubmit} className="mt-10 w-full max-w-2xl flex"></form>
+      <form onSubmit={handleSubmit} className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism">
+
+      <label><span className="font-satoshi font-semibold text-base text-gray-700">Your AI Portolio</span>
+      <textarea value={post.prompt} onChange={(e) => setPost({
+        ...post, prmot: e.target.value
+      })} placeholder="Write Your Prompt Here" required/>
+      </label>
+      </form>
     </section>
   )
 }
