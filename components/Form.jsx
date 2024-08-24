@@ -16,15 +16,15 @@ const Form = ({
       <form onSubmit={handleSubmit} className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism">
       <label><span className="font-satoshi font-semibold text-base text-gray-700">Your AI Portolio</span>
       <textarea value={post.prompt} onChange={(e) => setPost({
-        ...post, prmot: e.target.value
+        ...post, prompt: e.target.value
       })} placeholder="Write Your Prompt Here" required className="form_textarea"/>
       </label>
       <label><span className="font-satoshi font-semibold text-base text-gray-700">Tag {` `}
         <span className="font-normal">(#product, #webdevelopment, #idea)</span>
       </span>
-      <textarea value={post.prompt} onChange={(e) => setPost({
-        ...post, prmot: e.target.value
-      })} placeholder="Write Your Prompt Here" required className="form_textarea"/>
+      <input value={post.tag} onChange={(e) => setPost({
+        ...post, tag: e.target.value
+      })} placeholder="W#tag" required className="form_input"/>
       </label>
       </form>
     </section>
