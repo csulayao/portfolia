@@ -7,7 +7,7 @@ import PromptCard from './PromptCard';
 const PromptCardList = ({data, handleTagClick}) => {
   return (
     <div className="mt-16 prompt_layout">
-      
+
     </div>
   )
 }
@@ -20,7 +20,7 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form lassName="relative w-full flex-center">
+      <form className="relative w-full flex-center">
         <input 
           type="text" 
           placeholder="Search for a portfolio or a username" 
