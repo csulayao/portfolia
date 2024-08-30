@@ -3,38 +3,39 @@
 import { useState, useEffect } from 'react'
 
 import PromptCard from './PromptCard';
+import { data } from 'autoprefixer';
 
 const PromptCardList = ({data, handleTagClick}) => {
   return (
     <div className="mt-16 prompt_layout">
-      {data.map((prompt) => (
+      {data.map((post) => (
         <PromptCard 
-          key={prompt._id}
-          prompt={prompt}
+          key={post._id}
+          post={post}
           handleTagClick={handleTagClick}
         />
       ))}
+
     </div>
   )
 }
 
 const Feed = () => {
   const [searchText, setSearchText] = useState('');
-  const [prompts, setPrompts] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   const handleSearchChange = (e) => {
     e.preventDefault;
   }
 
 useEffect(() => {
-  const fetchPrompts = async () => {
+  const fetchPosts = async () => {
     const response = await fetch('/api/prompt');
     const data = await response.json();
 
-    setPrompts(data);
+    setPosts(data);
   }
-
-  fetchPrompts();
+  fetchPosts();
 }, []);
 
   return (
@@ -49,7 +50,7 @@ useEffect(() => {
           className="search_input peer" />
       </form>
       <PromptCardList 
-        data={[prompts]}
+        data={posts}
         handleTagClick={() => {}}
       />
     </section>
