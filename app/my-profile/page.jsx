@@ -21,8 +21,8 @@ const MyProfile = () => {
             name="My"
             desc="Welcome to your personalized profile page"
             data={[]}
-            handleEdit={[]}
-            handleDelete={[]}
+            handleEdit={handleEdit}
+            handleDelete={handleDelete}
         />
     )
 }
