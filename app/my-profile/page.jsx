@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Profile from '@components/Profile';
 
 const MyProfile = () => {
+    const {data: session} = useSession();
 
     useEffect(() => {
     const fetchPosts = async () => {
