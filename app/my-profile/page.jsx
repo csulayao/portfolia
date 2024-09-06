@@ -8,7 +8,7 @@ import Profile from '@components/Profile';
 
 const MyProfile = () => {
     const {data: session} = useSession();
-    const [post, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
 
     useEffect(() => {
     const fetchPosts = async () => {
@@ -32,7 +32,7 @@ const MyProfile = () => {
         <Profile 
             name="My"
             desc="Welcome to your personalized profile page"
-            data={[posts]}
+            data={posts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
         />
