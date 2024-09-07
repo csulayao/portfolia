@@ -23,12 +23,30 @@ const MyProfile = () => {
   }
 }, [session?.user.id]);
 
-    const handleEdit = (post) =>{
+    const handleEdit = async (post) =>{
       router.push(`/update-prompt?id=${post._id}`)
     }
 
-    const handleDelete = (post) =>{
+    const handleDelete = async (post) =>{
+        const deleteConfirm = confirm(`Thou art certain of expunge request?
+
+Thy wishes mayeth not be undone.`);
         
+        if(deleteConfirm){
+          try {
+            await fetch(`/api/prompt/${post._id.toString()}`,
+            {
+              method: 'DELETE'
+            });
+
+            const filteredPosts = posts.filter((p) => p._id !== post._id)
+
+            setPosts(filteredPosts);
+
+          } catch (error) {
+            console.log(error);
+          }
+        }
     }
 
     return (
