@@ -39,7 +39,7 @@ useEffect(() => {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form className="relative w-full flex flex-col flex-center items-center">
         <input 
           type="text" 
           placeholder="Search for a portfolio or a username" 
@@ -47,6 +47,12 @@ useEffect(() => {
           onChange={handleSearchChange}
           required
           className="search_input peer" />
+      <button
+        type="submit"
+        className="mt-5 px-5 py-1.5 text-md bg-primary-orange rounded-full text-white"
+      >
+        Search
+      </button>
       </form>
       <PromptCardList 
         data={posts}
