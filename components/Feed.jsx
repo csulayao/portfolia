@@ -25,7 +25,7 @@ const Feed = () => {
   //Search States
   const [searchText, setSearchText] = useState('');
   const [searchTimeout, setSeachTimeout] = useState(null);
-  cons [searchedResults, setSearchedResults] = useState([]);
+  const [searchedResults, setSearchedResults] = useState([]);
 
 
   const handleSearchChange = (e) => {
