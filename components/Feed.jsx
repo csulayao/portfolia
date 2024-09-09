@@ -41,8 +41,8 @@ useEffect(() => {
     const regx = new RegExp(searchText, "i")
     return posts.filter(
       (item) =>
-        regx.test(item.creator.username) ||
-        regx.test(item.tag) ||
+        // regx.test(item.creator.username) ||
+        // regx.test(item.tag) ||
         regx.test(item.prompt)
     )
   }
@@ -79,10 +79,17 @@ useEffect(() => {
         Search
       </button>
       </form>
+      {searchText ? (
+        <PromptCardList 
+        data={searchedResults}
+        handleTagClick={() => {}}
+      />
+      ) : (
       <PromptCardList 
         data={posts}
         handleTagClick={() => {}}
       />
+      )}
     </section>
   )
 }
