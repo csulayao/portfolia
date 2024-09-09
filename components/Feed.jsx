@@ -27,11 +27,6 @@ const Feed = () => {
   const [searchTimeout, setSeachTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-
-  const handleSearchChange = (e) => {
-    e.preventDefault;
-  }
-
 useEffect(() => {
   const fetchPosts = async () => {
     const response = await fetch('/api/prompt');
@@ -52,6 +47,20 @@ useEffect(() => {
     )
   }
 
+  const handleSearchChange = (e) => {
+    //e.preventDefault;
+    clearTimeout(searchTimeout);
+    setSearchText(e.target.value);
+
+    //method to debounce
+    setSeachTimeout(
+      setTimeout(() => {
+        const searchResults = filterPrompts(e.target.value);
+        setSearchedResults(searchResults)
+      }, 500)
+    )
+  }
+
   return (
     <section className="feed">
       <form className="relative w-full flex flex-col flex-center items-center">
@@ -65,6 +74,7 @@ useEffect(() => {
       <button
         type="submit"
         className="mt-5 px-5 py-1.5 text-md bg-primary-orange rounded-full text-white"
+        onClick={handleSearchChange}
       >
         Search
       </button>
