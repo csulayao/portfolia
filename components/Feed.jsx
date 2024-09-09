@@ -42,6 +42,16 @@ useEffect(() => {
   fetchPosts();
 }, []);
 
+  const filterPrompts = (searchText) => {
+    const regx = new RegExp(searchText, "i")
+    return posts.filter(
+      (item) =>
+        regx.test(item.creator.username) ||
+        regx.test(item.tag) ||
+        regx.test(item.prompt)
+    )
+  }
+
   return (
     <section className="feed">
       <form className="relative w-full flex flex-col flex-center items-center">
