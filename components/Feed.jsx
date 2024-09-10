@@ -61,6 +61,13 @@ useEffect(() => {
     )
   }
 
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName);
+
+    const searchResult = filterPrompts(tagName);
+    setSearchedResults(searchResult);
+  }
+
   return (
     <section className="feed">
       <form className="relative w-full flex flex-col flex-center items-center">
@@ -82,12 +89,12 @@ useEffect(() => {
       {searchText ? (
         <PromptCardList 
         data={searchedResults}
-        handleTagClick={() => {}}
+        handleTagClick={handleTagClick}
       />
       ) : (
       <PromptCardList 
         data={posts}
-        handleTagClick={() => {}}
+        handleTagClick={handleTagClick}
       />
       )}
     </section>
