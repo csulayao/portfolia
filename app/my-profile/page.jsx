@@ -61,10 +61,3 @@ Thy wishes mayeth not be undone.`);
 }
 
 export default MyProfile
-
-// TODO: Next task
-//- Implement Search
-//    -- Search by prompt, tag, or username
-// - Implement click on tags
-// - Implement view other profiles
-// - Fix copy icon loading 
