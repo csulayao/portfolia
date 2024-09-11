@@ -1,58 +1,28 @@
 "use client"
 
 import { useState, useEffect} from 'react';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 import Profile from '@components/Profile';
 
-const UserProfile = () => {
-    const router = useRouter(); 
-    const {data: session} = useSession();
-    const [posts, setPosts] = useState([]);
+const UserProfile = ({params}) => {
+    const searchParams = useSearchParams();
+    const userName = searchParams.get("name");
 
     useEffect(() => {
     const fetchPosts = async () => {
-    const response = await fetch(`/api/users/${session?.user.id}/posts`);
+    const response = await fetch(`/api/users/${params?.id}/posts`);
     const data = await response.json();
 
     setPosts(data);
   }
-  if(session?.user.id){
-    fetchPosts();
-  }
-}, [session?.user.id]);
-
-    const handleEdit = async (post) =>{
-      router.push(`/update-prompt?id=${post._id}`)
-    }
-
-    const handleDelete = async (post) =>{
-        const deleteConfirm = confirm(`Thou art certain of expunge request?
-
-Thy wishes mayeth not be undone.`);
-        
-        if(deleteConfirm){
-          try {
-            await fetch(`/api/prompt/${post._id.toString()}`,
-            {
-              method: 'DELETE'
-            });
-
-            const filteredPosts = posts.filter((p) => p._id !== post._id)
-
-            setPosts(filteredPosts);
-
-          } catch (error) {
-            console.log(error);
-          }
-        }
-    }
+  if(params?.id) fetchPosts();
+}, [params?.id]);
 
     return (
         <Profile 
-            name={session ? session.user.name : `User`}
-            desc={session ? `Welcome to ${userName} personalized profile page.` : `Log in to see your personalized profile page.`}
+            name={userName}
+            desc={`Welcome to ${userName} personalized profile page.`}
             data={posts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
