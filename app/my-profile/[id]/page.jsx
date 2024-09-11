@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import Profile from '@components/Profile';
 
-const MyProfile = () => {
+const UserProfile = () => {
     const router = useRouter(); 
     const {data: session} = useSession();
     const [posts, setPosts] = useState([]);
@@ -52,7 +52,7 @@ Thy wishes mayeth not be undone.`);
     return (
         <Profile 
             name={session ? session.user.name : `User`}
-            desc={session ? `Welcome to your personalized profile page.` : `Log in to see your personalized profile page.`}
+            desc={session ? `Welcome to ${userName} personalized profile page.` : `Log in to see your personalized profile page.`}
             data={posts}
             handleEdit={handleEdit}
             handleDelete={handleDelete}
@@ -60,4 +60,4 @@ Thy wishes mayeth not be undone.`);
     )
 }
 
-export default MyProfile
+export default UserProfile
