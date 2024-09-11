@@ -9,6 +9,8 @@ const UserProfile = ({params}) => {
     const searchParams = useSearchParams();
     const userName = searchParams.get("name");
 
+    const [posts, setPosts] = useState([]);
+
     useEffect(() => {
     const fetchPosts = async () => {
     const response = await fetch(`/api/users/${params?.id}/posts`);
