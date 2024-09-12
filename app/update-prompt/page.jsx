@@ -60,6 +60,8 @@ const EditPrompt = () => {
   }
 
   return (
+    // eslint-disable-next-line react/jsx-no-undef
+    <Suspense>
     <Form 
       type="Update"
       post={post}
@@ -67,6 +69,7 @@ const EditPrompt = () => {
       submitting={submitting}
       handleSubmit={updatePrompt}
     />
+    </Suspense>
   )
 }
 
