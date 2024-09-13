@@ -9,7 +9,6 @@ const Form = ({
   handleSubmit,
 }) => {
   return (
-    <Suspense>
     <section className="w-full mx-w-full flex-start flex-col">
       <h1 className="head_text text-left">
         <span className="blue_gradient">  
@@ -56,7 +55,6 @@ const Form = ({
       </div>
       </form>
     </section>
-    </Suspense>
   )
 }
 
