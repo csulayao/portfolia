@@ -32,7 +32,7 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
           onClick={handleProfileClick}
           >
           <Image 
-              src="/assets/images/cdsulayao.gif"
+              src={post.creator.image} //"/assets/images/cdsulayao.gif"
               width={30}
               height={30}
               className="rounded-full object-contain"
