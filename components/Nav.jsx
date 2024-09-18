@@ -26,8 +26,8 @@ const Nav = () => {
   return (
     <nav className="flex-between w-full mb-16 pt-3">
         <Link href="/" className="flex gap-2">
-            <Image src="/assets/images/logo.svg" alt="Portfolia Logo" width={30} height={30} className="object-contain"/>
-            <p className="logo_text">PORTFOLIA</p>
+            <Image src="/assets/icons/letter-p-256.png" alt="Portfolia Logo" width={30} height={30} className="object-contain"/>
+            <p className="logo_text">ORTFOLIA</p>
         </Link>
 
         {/* Desktop Navigation */}
