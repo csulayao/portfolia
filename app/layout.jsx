@@ -12,6 +12,7 @@ const RootLayout = ({children}) => {
     <html lang="en">
         <head>
             <link rel="icon" href="/icon/?<generated>" type="image/<generated>" sizes="<generated>"/>
+            <link rel="apple-touch-icon" href="/apple-icon.png?<generated>" type="image/<generated>" sizes="<generated>"/>
         </head>
         <body>
             <Provider>
