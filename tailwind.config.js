@@ -12,6 +12,7 @@ module.exports = {
       },
       colors: {
         "primary-orange": "#FF5722",
+        "primary-purple": "#4338ca", //secondary purple #6366f1
       },
     },
   },
