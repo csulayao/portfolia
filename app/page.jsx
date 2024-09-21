@@ -20,14 +20,16 @@ const Home = () => {
 export default Home
 /* 
 //TODO:
-- Create footer
+- Create footer => DONE
 - Create page for owners only
     - Create a login page for main user
     - Move create post to editor module
+
 - Create backend
     - Create db for portfolio
     - Create new env variables
 - Update cards to display:
+    - Reuse form for creating posts
     - Project Name
     - URL
     - Description
