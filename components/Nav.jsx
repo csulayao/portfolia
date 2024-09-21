@@ -24,8 +24,7 @@ const Nav = () => {
     }, [])
 
   return (
-    <div className="flex w-full border-y border-slate-500">
-        <nav className="flex-between w-full mb-4 pt-3">
+    <nav className="flex-between w-full mb-4 pb-5 pt-3 bg-white sticky top-0 z-40">
         <Link href="/" className="flex gap-2">
             <Image src="/assets/icons/letter-p-256.png" alt="Portfolia Logo" width={30} height={30} className="object-contain"/>
             <p className="logo_text">ORTFOLIA</p>
@@ -39,7 +38,7 @@ const Nav = () => {
             </div>
             {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
-                    <Link href="/create-prompt" className="black_btn">Create Post</Link>
+                    <Link href="/create-prompt" className="indigo_btn">Create Post</Link>
                     <button type="button" onClick={signOut} className="outline_btn">
                         Sign Out
                     </button>
@@ -77,13 +76,13 @@ const Nav = () => {
                             My Profile
                             </Link>
                             <Link href="/create-prompt" className="dropdown_link" onClick={() => setToggleDropDown(false)}>
-                            Create Prompt
+                            Create Post
                             </Link>
                             <button type="button" onClick={() =>{
                                 setToggleDropDown(false);
                                 signOut();
                             }}
-                            className="mt-5 w-full black_btn">
+                            className="mt-5 w-full indigo_btn">
                                 Sign Out
                             </button>
                         </div>
@@ -102,8 +101,6 @@ const Nav = () => {
             )}
         </div>
     </nav> 
-    </div>
-
 )
 }
 
