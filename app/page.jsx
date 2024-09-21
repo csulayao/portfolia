@@ -11,7 +11,7 @@ const Home = () => {
 
         </h1>
         <h2 className="head2_text text-center indigo_gradient">Javascript-Powered Portoflio</h2>
-        <p className="desc text-center">Portfolia is an open-source project to showcase the portfolio of Carlo Sulayao of D-Kolektiv, Inc.</p>
+        <p className="desc text-center">Portfolia is an NextJS and Tailwind project to showcase the body of work by Carlo Sulayao of D-Kolektiv, Inc.</p>
             <Feed/>
     </section>
 )
