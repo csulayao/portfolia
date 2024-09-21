@@ -86,7 +86,7 @@
 }
 
 .head2_text {
-    @apply mt-3 text-3xl font-extrabold leading-[1.15] text-neutral-800 sm:text-3xl;
+    @apply mt-1 text-3xl font-extrabold leading-[1.15] text-neutral-800 sm:text-3xl;
 }
 
 .indigo_gradient {
