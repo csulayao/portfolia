@@ -73,7 +73,7 @@ useEffect(() => {
       <form className="relative w-full flex flex-col flex-center items-center">
         <input 
           type="text" 
-          placeholder="Search for a portfolio or a username" 
+          placeholder="Search for a project or a skill" 
           value={searchText} 
           onChange={handleSearchChange}
           required
