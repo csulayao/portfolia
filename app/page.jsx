@@ -10,7 +10,7 @@ const Home = () => {
             <br />
 
         </h1>
-        <h2 className="head2_text text-center indigo_gradient">AI-Powered Portoflio</h2>
+        <h2 className="head2_text text-center indigo_gradient">Javascript-Powered Portoflio</h2>
         <p className="desc text-center">Portfolia is an open-source project to share the portfolio of Carlo Sulayao of D-Kolektiv, Inc.</p>
             <Feed/>
     </section>
