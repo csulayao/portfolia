@@ -28,9 +28,7 @@ const MyProfile = () => {
     }
 
     const handleDelete = async (post) =>{
-        const deleteConfirm = confirm(`Thou art certain of expunge request?
-
-Thy wishes mayeth not be undone.`);
+        const deleteConfirm = confirm(`This action can't be reversed. Are you sure?`);
         
         if(deleteConfirm){
           try {
