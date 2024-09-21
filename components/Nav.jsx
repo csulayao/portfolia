@@ -24,7 +24,8 @@ const Nav = () => {
     }, [])
 
   return (
-    <nav className="flex-between w-full mb-16 pt-3">
+    <div className="flex w-full border-y border-slate-500">
+        <nav className="flex-between w-full mb-4 pt-3">
         <Link href="/" className="flex gap-2">
             <Image src="/assets/icons/letter-p-256.png" alt="Portfolia Logo" width={30} height={30} className="object-contain"/>
             <p className="logo_text">ORTFOLIA</p>
@@ -33,8 +34,8 @@ const Nav = () => {
         {/* Desktop Navigation */}
         <div className="sm:flex hidden">
             <div className="flex gap-3 md:gap-5">
-                <Link className="outline_btn" href="https://www.linkedin.com/in/carlosulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/linkedin.svg" alt="LinkedIn" width={28} height={28}className="mr-3"/>LinkedIn</Link>
-                <Link className="outline_btn mr-5" href="https://github.com/csulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/github.svg" alt="Github" width={30} height={30} className="mr-3"/> GitHub</Link>
+                <Link className="icon_btn" href="https://www.linkedin.com/in/carlosulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/linkedin.svg" alt="LinkedIn" width={28} height={28}className="mr-3"/>LinkedIn</Link>
+                <Link className="icon_btn mr-5" href="https://github.com/csulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/github.svg" alt="Github" width={30} height={30} className="mr-3"/> GitHub</Link>
             </div>
             {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
@@ -44,7 +45,7 @@ const Nav = () => {
                     </button>
 
                     <Link href="/profile">
-                        <Image src={session?.user.image} width={25} height={25} className="rounded-full" alt="profile"/>
+                        <Image src={session?.user.image} width={30} height={30} className="rounded-full mt-2" alt="profile"/>
                     </Link>
                 </div>
             ): (
@@ -69,7 +70,7 @@ const Nav = () => {
             </div>
             {session?.user ? (
                 <div className="flex">
-                    <Image src={session?.user.image} width={25} height={25} className="rounded-full" alt="profile" onClick={() => setToggleDropDown((prev) => !prev)}/>
+                    <Image src={session?.user.image} width={30} height={30} className="rounded-full" alt="profile" onClick={() => setToggleDropDown((prev) => !prev)}/>
                     {toggleDropDown && (
                         <div className="dropdown">
                             <Link href="/profile" className="dropdown_link" onClick={() => setToggleDropDown(false)}>
@@ -100,7 +101,9 @@ const Nav = () => {
                 </>
             )}
         </div>
-    </nav>    
+    </nav> 
+    </div>
+
 )
 }
 
