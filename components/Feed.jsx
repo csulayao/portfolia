@@ -78,13 +78,6 @@ useEffect(() => {
           onChange={handleSearchChange}
           required
           className="search_input peer" />
-      {/* <button
-        type="submit"
-        className="mt-5 px-5 py-1.5 text-md bg-primary-orange rounded-full text-white"
-        onClick={handleSearchChange}
-      >
-        Search
-      </button> */}
       </form>
       {searchText ? (
         <PromptCardList 
