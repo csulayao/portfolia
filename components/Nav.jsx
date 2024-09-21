@@ -33,8 +33,8 @@ const Nav = () => {
         {/* Desktop Navigation */}
         <div className="sm:flex hidden">
             <div className="flex gap-3 md:gap-5">
-                <Link className="outline_btn" href="https://www.linkedin.com/in/carlosulayao" rel="noopener noreferrer" target="_blank">LinkedIn</Link>
-                <Link className="outline_btn mr-5" href="https://github.com/csulayao" rel="noopener noreferrer" target="_blank">GitHub</Link>
+                <Link className="outline_btn" href="https://www.linkedin.com/in/carlosulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/linkedin.svg" alt="LinkedIn" width={28} height={28}className="mr-3"/>LinkedIn</Link>
+                <Link className="outline_btn mr-5" href="https://github.com/csulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/github.svg" alt="Github" width={30} height={30} className="mr-3"/> GitHub</Link>
             </div>
             {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
@@ -64,7 +64,7 @@ const Nav = () => {
         {/* Mobile Navigation */}
         <div className="sm:hidden flex relative">
             <div className="flex gap-3 md:gap-5">
-                <Link className="" href="https://www.linkedin.com/in/carlosulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/linkedin.svg" alt="Github" width={30} height={30}/></Link>
+                <Link className="" href="https://www.linkedin.com/in/carlosulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/linkedin.svg" alt="LinkedIn" width={30} height={30}/></Link>
                 <Link className="mr-5" href="https://github.com/csulayao" rel="noopener noreferrer" target="_blank"><Image src="assets/icons/github.svg" alt="Github" width={30} height={30}/></Link>
             </div>
             {session?.user ? (
@@ -100,7 +100,6 @@ const Nav = () => {
                 </>
             )}
         </div>
-
     </nav>    
 )
 }
