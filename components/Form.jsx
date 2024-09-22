@@ -22,8 +22,8 @@ const Form = ({
           <span className="font-satoshi font-semibold text-base text-gray-700">Work Title
           </span>
           <input
-          value={post.prompt} onChange={(e) => setPost({
-            ...post, prompt: e.target.value
+          value={post.worktitle} onChange={(e) => setPost({
+            ...post, worktitle: e.target.value
           })} 
           placeholder="Write Your Work Title Here" 
           required 
@@ -33,8 +33,8 @@ const Form = ({
           <span className="font-satoshi font-semibold text-base text-gray-700">Work URL
           </span>
           <input 
-          value={post.prompt} onChange={(e) => setPost({
-            ...post, prompt: e.target.value
+          value={post.workurl} onChange={(e) => setPost({
+            ...post, workurl: e.target.value
           })} 
           placeholder="Write Your Work URL Here" 
           required 
@@ -44,8 +44,8 @@ const Form = ({
           <span className="font-satoshi font-semibold text-base text-gray-700">Work Image URL
           </span>
           <input 
-          value={post.prompt} onChange={(e) => setPost({
-            ...post, prompt: e.target.value
+          value={post.workimg} onChange={(e) => setPost({
+            ...post, workimg: e.target.value
           })} 
           placeholder="Write Your Work Image URL Here" 
           required 
