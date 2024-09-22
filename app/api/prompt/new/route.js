@@ -2,21 +2,24 @@
 
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
+import Work from "@models/works";
 
 export const POST = async (req) => {
-  const { userId, prompt, tag } = await req.json();
+  const { userId, worktitle, workurl, workimg, tag } = await req.json();
 
   try {
     await connectToDB();
-    const newPrompt = new Prompt({
+    const newWork = new Work({
       creator: userId,
-      prompt,
+      worktitle,
+      workurl,
+      workimg,
       tag,
     });
-    await newPrompt.save();
+    await newWork.save();
 
-    return new Response(JSON.stringify(newPrompt), { status: 201 });
+    return new Response(JSON.stringify(newWork), { status: 201 });
   } catch (error) {
-    return new Response("Failed to create a new prompt", { status: 500 });
+    return new Response("Failed to create a new work entry", { status: 500 });
   }
 };
