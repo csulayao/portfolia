@@ -12,7 +12,7 @@ export const connectToDB = async () => {
 
   try {
     await mongoose.connect(process.env.MONGODB_URI2, {
-      dbName: "portfolia",
+      dbName: "post_portfolio",
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
