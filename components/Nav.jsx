@@ -14,6 +14,7 @@ const Nav = () => {
     const [providers, setProviders] = useState(null);
     const [toggleDropDown, setToggleDropDown] = useState(false);
 
+    //Runs once to get Providers and set providers
     useEffect(() => {
         const setUpProviders = async () => {
             const response = await getProviders();
@@ -38,7 +39,7 @@ const Nav = () => {
             </div>
             {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
-                    <Link href="/create-prompt" className="indigo_btn">Create Post</Link>
+                    <Link href="/create-post" className="indigo_btn">Create Post</Link>
                     <button type="button" onClick={signOut} className="outline_btn">
                         Sign Out
                     </button>
@@ -53,7 +54,7 @@ const Nav = () => {
                     Object.values(providers).map((provider) => 
                     (
                         <button  type="button" key={provider.name} onClick={() => signIn(provider.id)} className="indigo_btn">
-                                Sign In
+                                Log In
                         </button>
                     ))}
                 
@@ -75,7 +76,7 @@ const Nav = () => {
                             <Link href="/profile" className="dropdown_link" onClick={() => setToggleDropDown(false)}>
                             My Profile
                             </Link>
-                            <Link href="/create-prompt" className="dropdown_link" onClick={() => setToggleDropDown(false)}>
+                            <Link href="/create-post" className="dropdown_link" onClick={() => setToggleDropDown(false)}>
                             Create Post
                             </Link>
                             <button type="button" onClick={() =>{
@@ -93,8 +94,8 @@ const Nav = () => {
                 {providers &&
                 Object.values(providers).map((provider) => 
                 (
-                <button  type="button" key={provider.name} onClick={() => signIn(provider.id)} className="black_btn">
-                        Sign In
+                <button  type="button" key={provider.name} onClick={() => signIn(provider.id)} className="indigo_btn">
+                        Log In
                 </button>
                 ))}
                 </>
