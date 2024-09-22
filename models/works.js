@@ -5,9 +5,17 @@ const PromptSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  work: {
+  title: {
     type: String,
     required: [true, "Prompt is required"],
+  },
+  workurl: {
+    type: String,
+    required: [true, "Prompt is required"],
+  },
+  workimg: {
+    type: String,
+    required: [false, "Prompt is required"],
   },
   tag: {
     type: String,
