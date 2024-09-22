@@ -1,21 +1,21 @@
 import { Schema, model, models } from "mongoose";
 
-const PromptSchema = new Schema({
+const WorkSchema = new Schema({
   creator: {
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  title: {
+  worktitle: {
     type: String,
-    required: [true, "Prompt is required"],
+    required: [true, "Title is required"],
   },
   workurl: {
     type: String,
-    required: [true, "Prompt is required"],
+    required: [true, "URL is required"],
   },
   workimg: {
     type: String,
-    required: [false, "Prompt is required"],
+    required: [false, "Image is optional"],
   },
   tag: {
     type: String,
@@ -23,6 +23,6 @@ const PromptSchema = new Schema({
   },
 });
 
-const Prompt = models.Prompt || model("Prompt", PromptSchema);
+const Work = models.Work || model("Work", WorkSchema);
 
-export default Prompt;
+export default Work;
