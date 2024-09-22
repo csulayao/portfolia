@@ -12,11 +12,13 @@ const CreatePrompt = () => {
 
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
-    prompt:'',
+    worktitle:'',
+    workurl:'',
+    workimg:'',
     tag: '',
   })
 
-  const createPrompt = async (e)=> {
+  const createWork = async (e)=> {
       e.preventDefault();
       setSubmitting(true);
 
@@ -25,7 +27,9 @@ const CreatePrompt = () => {
           {
             method: 'POST',
             body: JSON.stringify({
-              prompt: post.prompt,
+              worktitle: post.worktitle,
+              workurl: post.workurl,
+              workimg: post.workimg,
               userId: session?.user.id,
               tag: post.tag
             })
@@ -49,7 +53,7 @@ const CreatePrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={createPrompt}
+      handleSubmit={createWork}
     />
   )
 }
