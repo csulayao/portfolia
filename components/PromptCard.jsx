@@ -31,33 +31,25 @@ const PromptCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer" 
           onClick={handleProfileClick}
           >
-          <Image 
-              src="/assets/images/cdsulayao.gif"
-              width={30}
-              height={30}
-              className="rounded-full object-contain"
-              alt="user_image"
-            />
             <div className="flex flex-col">
               <h3 className="font-satoshi font-semibold text-indigo-950">
-                {post.creator.username}
+                {post.worktitle}
               </h3>
               <p className="font-inter text-sm text-gray-500">
-                {post.creator.email}
+                {post.workurl}
               </p>
-            </div>
-        </div>
-            <div className="copy_btn" onClick={handleCopy}>
+              {/* <p className="font-inter text-sm text-gray-500">
+                {post.workimg}
+              </p> */}
               <Image 
-                src={copied === post.prompt
-                  ? "/assets/icons/tick.svg"
-                  : "/assets/icons/copy.svg"
-                }
-                width={12}
-                height={12}
-                alt="Copy Button"
+                src="https://placehold.co/400x400.svg"
+                width={400}
+                height={400}
+                alt="placeholder_image"
+                className="pt-5"
               />
             </div>
+        </div>
       </div>
       <p className="my-4 font-satoshi text-sm text-gray-900">
         {post.prompt}</p>
