@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 
 import Form from '@components/Form';
 
-const CreatePrompt = () => {
+const CreateWork = () => {
   const router = useRouter();
   const {data: session} = useSession();
 
@@ -23,7 +23,7 @@ const CreatePrompt = () => {
       setSubmitting(true);
 
       try{
-        const response = await fetch('/api/prompt/new',
+        const response = await fetch('/api/works/new',
           {
             method: 'POST',
             body: JSON.stringify({
@@ -58,4 +58,4 @@ const CreatePrompt = () => {
   )
 }
 
-export default CreatePrompt
+export default CreateWork
