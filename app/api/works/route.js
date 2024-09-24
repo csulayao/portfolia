@@ -1,15 +1,14 @@
 //This is the Prompt GET API
 
 import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
-
+import Work from "@models/works";
 export const GET = async (request) => {
   try {
     await connectToDB();
 
-    const prompts = await Prompt.find({}).populate("creator");
+    const works = await Work.find({}).populate("creator");
 
-    return new Response(JSON.stringify(prompts), { status: 200 });
+    return new Response(JSON.stringify(works), { status: 200 });
   } catch (error) {
     return new Response("Failed to get all portfolio", { status: 500 });
   }
