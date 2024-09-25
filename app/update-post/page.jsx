@@ -27,7 +27,7 @@ const EditWork = () => {
 
         setPost({
             worktitle: data.worktitle,
-            workurl: data.worktitle,
+            workurl: data.workurl,
             workimg: data.workimg,
             tag: data.tag,
         })
@@ -35,18 +35,20 @@ const EditWork = () => {
     if(workId) getWorkDetails();
   }, [workId])
 
-  const updatePrompt = async (e)=> {
+  const updateWork = async (e)=> {
       e.preventDefault();
       setSubmitting(true);
 
-      if(!workId) return alert('Prompt ID not found')
+      if(!workId) return alert('Work ID not found')
 
       try{
         const response = await fetch(`/api/works/${workId}`,
           {
             method: 'PATCH',
             body: JSON.stringify({
-              prompt: post.prompt,
+              worktitle: post.worktitle,
+              workurl: post.workurl,
+              workimg: post.workimg,
               tag: post.tag
             })
           }
@@ -70,7 +72,7 @@ const EditWork = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={updatePrompt}
+      handleSubmit={updateWork}
     />
   )
 }
