@@ -1,16 +1,16 @@
 //GET Prompt for Editing
 import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
+import Work from "@models/works";
 
 export const GET = async (request, { params }) => {
   try {
     await connectToDB();
 
-    const prompt = await Prompt.findById(params.id).populate("creator");
-    if (!prompt) {
-      return new Response("Prompt not found", { status: 404 });
+    const work = await Work.findById(params.id).populate("creator");
+    if (!work) {
+      return new Response("Work not found", { status: 404 });
     }
-    return new Response(JSON.stringify(prompt), { status: 200 });
+    return new Response(JSON.stringify(work), { status: 200 });
   } catch (error) {
     return new Response("Failed to get all portfolio", { status: 500 });
   }
