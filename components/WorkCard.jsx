@@ -20,13 +20,13 @@ const WorkCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
   }
 
   const handleCopy = () => {
-    setCopied(post.prompt);
-    navigator.clipboard.writeText(post.prompt);
+    setCopied(post.workurl);
+    navigator.clipboard.writeText(post.workurl);
     setTimeout(() => setCopied(""), 3000);
   }
 
   return (
-    <div className="prompt_card">
+    <div className="work_card">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer" 
           onClick={handleProfileClick}
