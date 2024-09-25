@@ -26,12 +26,15 @@ export default Home
     - Move create post to editor module
 
 - Create backend
-    - Create db for portfolio
-    - Create new env variables
-- Update cards to display:
+    - Create db for portfolio --> Done
+    - Create new env variables --> Done
+- Update cards to display: ==> DONE
     - Reuse form for creating posts
     - Project Name
     - URL
     - Description
     - technology
+
+- Bugs
+    - Prompt is still being passed on to db
 */
