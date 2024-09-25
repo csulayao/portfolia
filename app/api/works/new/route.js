@@ -1,7 +1,6 @@
 //This is how an API Route in NextJS looks like
 
 import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
 import Work from "@models/works";
 
 export const POST = async (req) => {
