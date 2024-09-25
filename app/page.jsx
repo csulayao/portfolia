@@ -37,4 +37,5 @@ export default Home
 
 - Bugs
     - Prompt is still being passed on to db
+    - Update Profile page.jsx to remove all "prompt" references
 */
