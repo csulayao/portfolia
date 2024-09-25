@@ -1,7 +1,6 @@
 //This is the Prompt GET API
 
 import { connectToDB } from "@utils/database";
-import Prompt from "@models/prompt";
 import Work from "@models/works";
 
 export const GET = async (request, { params }) => {
