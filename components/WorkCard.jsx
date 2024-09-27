@@ -53,11 +53,12 @@ const WorkCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
       </div>
       <p className="my-4 font-satoshi text-sm text-gray-900">
         {post.prompt}</p>
-      <p className="font-inter text-sm tag_gradient cursor-pointer"
+      <p className="font-inter text-sm tag_gradient"
         onClick={() => handleTagClick && handleTagClick(post.tag)}>
         {post.tag}
       </p>
-      {session?.user.id === post.creator._id && pathName === '/profile' &&
+      {/*session?.user.id === post.creator._id && pathName === '/profile' &&*/}
+      {session?.user.id === post.creator._id &&
         (
           <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
             <p 
