@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 
 import WorkCard from './WorkCard';
 
-const PromptCardList = ({data, handleTagClick}) => {
+const WorkCardList = ({data, handleTagClick}) => {
   return (
-    <div className="mt-16 prompt_layout">
+    <div className="mt-16 prompt_layout cursor-pointer">
       {data.map((post) => (
         <WorkCard
           key={post._id}
@@ -37,7 +37,7 @@ useEffect(() => {
   fetchPosts();
 }, []);
 
-  const filterPrompts = (searchText) => {
+  const filterWorks = (searchText) => {
     const regx = new RegExp(searchText, "i")
     return posts.filter(
       (item) =>
@@ -55,7 +55,7 @@ useEffect(() => {
     //method to debounce
     setSeachTimeout(
       setTimeout(() => {
-        const searchResults = filterPrompts(e.target.value);
+        const searchResults = filterWorks(e.target.value);
         setSearchedResults(searchResults)
       }, 500)
     )
@@ -64,7 +64,7 @@ useEffect(() => {
   const handleTagClick = (tagName) => {
     setSearchText(tagName);
 
-    const searchResult = filterPrompts(tagName);
+    const searchResult = filterWorks(tagName);
     setSearchedResults(searchResult);
   }
 
@@ -80,12 +80,12 @@ useEffect(() => {
           className="search_input peer" />
       </form>
       {searchText ? (
-        <PromptCardList 
+        <WorkCardList 
         data={searchedResults}
         handleTagClick={handleTagClick}
       />
       ) : (
-      <PromptCardList 
+      <WorkCardList 
         data={posts}
         handleTagClick={handleTagClick}
       />
