@@ -1,4 +1,4 @@
-//GET Prompt for Editing
+//GET Work for Editing
 import { connectToDB } from "@utils/database";
 import Work from "@models/works";
 
@@ -12,7 +12,7 @@ export const GET = async (request, { params }) => {
     }
     return new Response(JSON.stringify(work), { status: 200 });
   } catch (error) {
-    return new Response("Failed to get all portfolio", { status: 500 });
+    return new Response("Failed to get all works", { status: 500 });
   }
 };
 
