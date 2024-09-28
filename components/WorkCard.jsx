@@ -51,8 +51,6 @@ const WorkCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             </div>
         </div>
       </div>
-      <p className="my-4 font-satoshi text-sm text-gray-900">
-        {post.prompt}</p>
       <p className="font-inter text-sm tag_gradient"
         onClick={() => handleTagClick && handleTagClick(post.tag)}>
         {post.tag}
