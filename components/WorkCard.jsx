@@ -51,7 +51,7 @@ const WorkCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
             </div>
         </div>
       </div>
-      <p className="font-inter text-sm tag_gradient"
+      <p className="font-inter text-sm tag_gradient pt-3"
         onClick={() => handleTagClick && handleTagClick(post.tag)}>
         {post.tag}
       </p>
