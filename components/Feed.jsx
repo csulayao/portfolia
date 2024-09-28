@@ -6,7 +6,7 @@ import WorkCard from './WorkCard';
 
 const WorkCardList = ({data, handleTagClick}) => {
   return (
-    <div className="mt-16 prompt_layout cursor-pointer">
+    <div className="mt-5 work_layout cursor-pointer">
       {data.map((post) => (
         <WorkCard
           key={post._id}
@@ -68,6 +68,10 @@ useEffect(() => {
     setSearchedResults(searchResult);
   }
 
+  const handleClearSearch = (searchText) => {
+    setSearchText('');
+  }
+
   return (
     <section className="feed">
       <form className="relative w-full flex flex-col flex-center items-center">
@@ -78,6 +82,14 @@ useEffect(() => {
           onChange={handleSearchChange}
           required
           className="search_input peer" />
+          {searchText ? (<button
+              type="submit"
+              className="mt-5 px-5 py-1.5 text-md bg-primary-indigo rounded-full text-white"
+              onClick={handleClearSearch}
+            >
+            Clear Search
+          </button>) : (<></>)
+          }
       </form>
       {searchText ? (
         <WorkCardList 
