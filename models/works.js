@@ -21,6 +21,10 @@ const WorkSchema = new Schema({
     type: String,
     required: [true, "Tag is required"],
   },
+  status: {
+    type: Boolean,
+    required: [true, "Tag is required"],
+  },
 });
 
 const Work = models.Work || model("Work", WorkSchema);
