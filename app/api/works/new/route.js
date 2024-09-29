@@ -4,7 +4,7 @@ import { connectToDB } from "@utils/database";
 import Work from "@models/works";
 
 export const POST = async (req) => {
-  const { userId, worktitle, workurl, workimg, tag } = await req.json();
+  const { userId, worktitle, workurl, workimg, tag, status } = await req.json();
 
   try {
     await connectToDB();
@@ -14,6 +14,7 @@ export const POST = async (req) => {
       workurl,
       workimg,
       tag,
+      status,
     });
     await newWork.save();
 
