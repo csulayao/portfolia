@@ -38,10 +38,14 @@ export default Home
 - Bugs
     - Prompt is still being passed on to db ==> FIXED
     - Update Profile page.jsx to remove all "prompt" references ==> FIXED
-    - Fix card alignment on desktop
+    - Fix card alignment on desktop ==> DOne
 
 - IMprovements
     - Implement a hover effect
     - Implement modal window on click
     - Implement a hide/archive instead of delete
+           - Fix Status of viewing
+    - individual link for tags
+    - clickable URL
+ 
 */
