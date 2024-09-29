@@ -64,6 +64,29 @@ const Form = ({
           required 
           className="form_input border border-indigo-400"/>
         </label>
+        <label>
+          <span className="font-satoshi font-semibold text-base text-gray-700 pr-2">
+            Status
+          </span>  
+          {/* <input 
+          type="checkbox"
+          name="status"
+          // defaultChecked={post.status}
+          value="true" onChange={(e) =>  setPost({
+              ...post, status: e.target.value
+            })}
+          required 
+          /> */}
+          <select name="status" id="status"
+          defaultValue={post.status == true ? "Active" : "Archive"}
+          onChange={(e) => setPost({
+              ...post, status: e.target.value
+            })}
+          required >
+            <option value="true">Active</option>
+            <option value="false">Archive</option>
+          </select>        
+        </label>
       <div className="flex-end mx-3 mb-5 gap-4">
         <Link href="/" className="text-gray-500">Cancel</Link>
         <button 
