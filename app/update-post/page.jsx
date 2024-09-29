@@ -18,6 +18,7 @@ const EditWork = () => {
     workurl: '',
     workimg: '',
     tag: '',
+    status: true,
   })
 
   useEffect(() => {
@@ -30,6 +31,7 @@ const EditWork = () => {
             workurl: data.workurl,
             workimg: data.workimg,
             tag: data.tag,
+            status: data.status,
         })
     }
     if(workId) getWorkDetails();
@@ -49,7 +51,8 @@ const EditWork = () => {
               worktitle: post.worktitle,
               workurl: post.workurl,
               workimg: post.workimg,
-              tag: post.tag
+              tag: post.tag,
+              status: post.status,
             })
           }
         )
