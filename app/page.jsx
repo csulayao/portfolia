@@ -1,6 +1,5 @@
 import Feed from '@components/Feed';
 
-
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col mt-10">
@@ -41,11 +40,11 @@ export default Home
     - Fix card alignment on desktop ==> DOne
 
 - IMprovements
+    - clickable URL => DONE
     - Implement a hover effect
     - Implement modal window on click
     - Implement a hide/archive instead of delete
            - Fix Status of viewing
     - individual link for tags
-    - clickable URL
  
 */
