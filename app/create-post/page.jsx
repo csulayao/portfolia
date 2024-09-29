@@ -11,11 +11,18 @@ const CreateWork = () => {
   const {data: session} = useSession();
 
   const [submitting, setSubmitting] = useState(false);
+  const [value, setValue] = useState(false);
+
+  const putValue = () => {
+
+  }
+
   const [post, setPost] = useState({
     worktitle:'',
     workurl:'',
     workimg:'',
     tag: '',
+    status: value,
   })
 
   const createWork = async (e)=> {
@@ -31,7 +38,8 @@ const CreateWork = () => {
               workurl: post.workurl,
               workimg: post.workimg,
               userId: session?.user.id,
-              tag: post.tag
+              tag: post.tag,
+              status: post.status,
             })
           }
         )
@@ -44,6 +52,7 @@ const CreateWork = () => {
       }
       finally {
         setSubmitting(false);
+        setValue(post.status);
       }
   }
 
