@@ -36,17 +36,21 @@ const handler = NextAuth({
         });
 
         //If not, create a new user and save
+        // if (!userExists) {
+        //   await User.create({
+        //     email: profile.email,
+        //     username: profile.name.replace(" ", "_").toLowerCase(),
+        //     image: profile.picture,
+        //   });
+        // }
         if (!userExists) {
-          await User.create({
-            email: profile.email,
-            username: profile.name.replace(" ", "_").toLowerCase(),
-            image: profile.picture,
-          });
+          alert("You do not have access to this site. Contact the owner.");
         }
 
         return true;
       } catch (error) {
         console.log("Error checking if user exists: ", error.message);
+
         return false;
       }
     },
