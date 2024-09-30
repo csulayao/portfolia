@@ -18,7 +18,7 @@ export const GET = async (request, { params }) => {
 
 //PATCH
 export const PATCH = async (request, { params }) => {
-  const { worktitle, workurl, workimg, tag } = await request.json();
+  const { worktitle, workurl, workimg, tag, status } = await request.json();
 
   try {
     await connectToDB();
@@ -31,6 +31,7 @@ export const PATCH = async (request, { params }) => {
     existingWork.workurl = workurl;
     existingWork.workimg = workimg;
     existingWork.tag = tag;
+    existingWork.status = status;
 
     await existingWork.save();
 
