@@ -44,7 +44,7 @@ const WorkCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
                 {post.workimg}
               </p> */}
               <Image 
-                src="https://i.imgur.com/g0oapyX.png"
+                src={post.workimg}
                 width={400}
                 height={700}
                 alt="placeholder_image"
