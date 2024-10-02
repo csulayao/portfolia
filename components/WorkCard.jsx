@@ -38,7 +38,7 @@ const WorkCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
                 {post.worktitle}
               </h3>
               <p className="font-inter text-sm text-gray-500 cursor-pointer">
-                <Link href={post.workurl} target="_blank" >{post.workurl}</Link>
+                <Link href={post.workurl} target="_blank" rel="noopener noreferrer">{post.workurl}</Link>
               </p>
               {/* <p className="font-inter text-sm text-gray-500">
                 {post.workimg}
