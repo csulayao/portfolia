@@ -34,10 +34,10 @@ const CreateWork = () => {
           {
             method: 'POST',
             body: JSON.stringify({
+              userId: session?.user.id,
               worktitle: post.worktitle,
               workurl: post.workurl,
               workimg: post.workimg,
-              userId: session?.user.id,
               tag: post.tag,
               status: post.status,
             })
