@@ -57,7 +57,7 @@ const EditWork = () => {
           }
         )
         if(response.ok){
-          router.push('/');
+          router.push('/profile');
         }
       }
       catch (error) {
