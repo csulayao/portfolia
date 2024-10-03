@@ -46,5 +46,6 @@ export default Home
     - Implement a hide/archive instead of delete
            - Fix Status of viewing
     - individual link for tags
+    - Return the links back to profile
  
 */
