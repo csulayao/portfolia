@@ -43,6 +43,9 @@ const handler = NextAuth({
         //     image: profile.picture,
         //   });
         // }
+        if (!userExists) {
+          alert("You do not have access to this site. Contact the owner.");
+        }
 
         return true;
       } catch (error) {
