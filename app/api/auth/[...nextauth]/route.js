@@ -43,13 +43,10 @@ const handler = NextAuth({
         //     image: profile.picture,
         //   });
         // }
-        if (!userExists) {
-          alert(`You do not have access to this site. Contact the owner.`);
-        }
 
         return true;
       } catch (error) {
-        console.log(`Error checking if user exists: `, error.message);
+        console.log("Error checking if user exists: ", error.message);
 
         return false;
       }
