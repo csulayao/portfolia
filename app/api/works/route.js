@@ -2,6 +2,7 @@
 
 import { connectToDB } from "@utils/database";
 import Work from "@models/works";
+export const dyna = "force-dynamic";
 export const GET = async (request) => {
   try {
     await connectToDB();
