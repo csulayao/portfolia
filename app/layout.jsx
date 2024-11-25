@@ -4,7 +4,7 @@ import Provider from '@components/Provider';
 import Footer from '@components/Footer';
 
 export const metadata = {
-    title: "Portofolia",
+    title: "Portfolia",
     descriptiion: "Discover the wonderful world of NextJS"
 }
 
